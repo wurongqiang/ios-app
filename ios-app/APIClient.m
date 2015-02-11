@@ -32,31 +32,5 @@ static NSString *const baseURLString=@"http://localhost:3000/";
     return self;
 }
 
--(NSURLSessionDataTask *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters credential:(NSString *)credential success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
-{
-    return [self GET:URLString parameters:parameters success:success failure:failure];
-}
-
--(NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters credential:(NSString *)credential success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
-{
-    return [self POST:URLString parameters:parameters success:success failure:failure];
-}
-
--(NSURLSessionDataTask *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters credential:(NSString *)credential success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
-{
-    return [self PUT:URLString parameters:parameters success:success failure:failure];
-}
-
--(NSURLSessionDataTask *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters credential:(NSString *)credential success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
-{
-    return [self DELETE:URLString parameters:parameters success:success failure:failure];
-}
-
--(NSURLSessionDataTask *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters contructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))formData credential:(NSString *)credential success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
-{
-    return [self POST:URLString parameters:parameters constructingBodyWithBlock:formData success:success failure:failure];
-}
-
-
 @end
 

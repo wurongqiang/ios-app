@@ -14,7 +14,7 @@
 
 + (NSURLSessionDataTask *)getAllStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion
 {
-    return [[APIClient sharedClient] GET:@"students.json" parameters:nil credential:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    return [[APIClient sharedClient] GET:@"students.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSArray *studentsResponse = responseObject;
         NSMutableArray *students = [NSMutableArray arrayWithCapacity:studentsResponse.count];
@@ -47,7 +47,6 @@
     
     return [[APIClient sharedClient] POST:@"students.json"
                                  parameters:params
-                                 credential:nil
                                     success:^(NSURLSessionDataTask *task, id responseObject) {
                                         if (completion) {
                                             completion(nil);
@@ -64,7 +63,6 @@
     NSString *url = [NSString stringWithFormat:@"students/%@.json",ID];
     return [[APIClient sharedClient] DELETE:url
                                parameters:nil
-                               credential:nil
                                   success:^(NSURLSessionDataTask *task, id responseObject) {
                                       if (completion) {
                                           completion(nil);
