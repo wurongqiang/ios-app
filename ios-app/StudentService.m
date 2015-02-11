@@ -7,8 +7,6 @@
 //
 
 #import "StudentService.h"
-#import "APIClient.h"
-#import "Student.h"
 
 @implementation StudentService
 

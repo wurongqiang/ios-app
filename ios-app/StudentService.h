@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Jimmy. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
 #import "Student.h"
+#import "APIClient.h"
 
-@interface StudentService : AFHTTPSessionManager
+@interface StudentService : NSObject
 
 + (NSURLSessionDataTask *)getAllStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion;
 + (NSURLSessionDataTask *)saveStudent:(Student *)student withCompletion:(void (^)(NSError *))completion;

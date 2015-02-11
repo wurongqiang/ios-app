@@ -15,15 +15,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self prepareStudents];
+//    [self loadStudents];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:true];
-    [self reloadStudents];
+    [self loadStudents];
 }
 
-//- (void)prepareStudents {
+//- (void)loadStudents {
 //    Student *student1 = [[Student alloc]init];
 //    [student1 setName:@"student1"];
 //    
@@ -36,7 +36,7 @@
 //    self.students = [[NSMutableArray alloc]initWithObjects:student1, student2, student3, nil];
 //}
 
-- (void)reloadStudents {
+- (void)loadStudents {
     __weak __typeof(self) weakSelf = self;
     [StudentService getAllStudentsWithCompletion:^(NSArray *students, NSError *error) {
         weakSelf.students = [[NSMutableArray alloc]initWithArray:students];
@@ -66,7 +66,13 @@
 
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    static NSString *cellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+//    
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//        NSLog(@"MemoryAllocated");
+//    }
+//    NSLog(@"CellUsed");
 //    
 //    Student *student = [self.students objectAtIndex:indexPath.row];
 //    cell.textLabel.text = student.name;
@@ -83,7 +89,7 @@
         Student *student = [self.students objectAtIndex:indexPath.row];
         [StudentService deleteStudent:student.ID withCompletion:^(NSError *error) {
             if (!error) {
-                [self reloadStudents];
+                [self loadStudents];
             }
         }];
     }
