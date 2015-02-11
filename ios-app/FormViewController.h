@@ -10,4 +10,8 @@
 
 @interface FormViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *gpa;
+
+
 @end

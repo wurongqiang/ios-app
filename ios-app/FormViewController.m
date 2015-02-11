@@ -10,16 +10,7 @@
 #import "StudentService.h"
 #import "Student.h"
 
-@interface FormViewController()
-
-@property (weak, nonatomic) IBOutlet UITextField *name;
-
-@property (weak, nonatomic) IBOutlet UITextField *gpa;
-
-@end
-
 @implementation FormViewController
-
 
 - (IBAction)SaveStudent:(id)sender {
     Student *student = [[Student alloc]init];

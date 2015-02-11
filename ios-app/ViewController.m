@@ -11,13 +11,6 @@
 #import "StudentService.h"
 #import "StudentCell.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
-
-@property (strong, nonatomic) NSMutableArray *students;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -71,6 +64,14 @@
     return cell;
 }
 
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    static NSString *cellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+//    
+//    Student *student = [self.students objectAtIndex:indexPath.row];
+//    cell.textLabel.text = student.name;
+//    return cell;
+//}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
