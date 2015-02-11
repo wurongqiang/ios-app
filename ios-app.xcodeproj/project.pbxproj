@@ -19,6 +19,7 @@
 		F609B64C1A8A6C7C00091D53 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F609B64B1A8A6C7C00091D53 /* APIClient.m */; };
 		F609B6581A8A701700091D53 /* StudentService.m in Sources */ = {isa = PBXBuildFile; fileRef = F609B6571A8A701700091D53 /* StudentService.m */; };
 		F609B65B1A8A7B3900091D53 /* FormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F609B65A1A8A7B3900091D53 /* FormViewController.m */; };
+		F628F71C1A8BA40900F381D9 /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F628F71B1A8BA40900F381D9 /* StudentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		F609B6571A8A701700091D53 /* StudentService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentService.m; sourceTree = "<group>"; };
 		F609B6591A8A7B3900091D53 /* FormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewController.h; sourceTree = "<group>"; };
 		F609B65A1A8A7B3900091D53 /* FormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewController.m; sourceTree = "<group>"; };
+		F628F71A1A8BA40900F381D9 /* StudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCell.h; sourceTree = "<group>"; };
+		F628F71B1A8BA40900F381D9 /* StudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 				F609B6481A8A6B8300091D53 /* Networking */,
 				F609B6521A8A6F6500091D53 /* RESTServices */,
 				F609B63F1A8A62DA00091D53 /* Models */,
+				F628F7191A8BA3E000F381D9 /* Views */,
 				F609B63D1A8A5EA800091D53 /* ViewControllers */,
 				F609B6211A8A5BF000091D53 /* Main.storyboard */,
 				F609B6241A8A5BF100091D53 /* Images.xcassets */,
@@ -201,6 +205,15 @@
 				F609B6571A8A701700091D53 /* StudentService.m */,
 			);
 			name = RESTServices;
+			sourceTree = "<group>";
+		};
+		F628F7191A8BA3E000F381D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F628F71A1A8BA40900F381D9 /* StudentCell.h */,
+				F628F71B1A8BA40900F381D9 /* StudentCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +358,7 @@
 				F609B65B1A8A7B3900091D53 /* FormViewController.m in Sources */,
 				F609B61A1A8A5BF000091D53 /* main.m in Sources */,
 				F609B6471A8A636A00091D53 /* Student.m in Sources */,
+				F628F71C1A8BA40900F381D9 /* StudentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

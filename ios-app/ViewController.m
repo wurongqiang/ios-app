@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Student.h"
 #import "StudentService.h"
+#import "StudentCell.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -61,13 +62,12 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    static NSString *cellIdentifier = @"StudentCell";
+    StudentCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
     Student *student = [self.students objectAtIndex:indexPath.row];
-    cell.textLabel.text = student.name;
+    cell.name.text = student.name;
+    cell.GPA.text = [NSString stringWithFormat:@"%@", student.gpa];
     return cell;
 }
 
