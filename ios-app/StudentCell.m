@@ -10,4 +10,10 @@
 
 @implementation StudentCell
 
+-(void)layoutSubviews {
+    [super layoutSubviews];
+    self.avatar.layer.cornerRadius = CGRectGetWidth(self.avatar.frame)/2;
+    self.avatar.layer.masksToBounds = YES;
+}
+
 @end

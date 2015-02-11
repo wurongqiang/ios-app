@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="48G-5v-b0h">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="48G-5v-b0h">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="104" id="69n-Oj-YhU" customClass="StudentCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StudentCell" rowHeight="117" id="69n-Oj-YhU" customClass="StudentCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="69n-Oj-YhU" id="o8A-wH-u9s">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvF-T9-pV8">
-                                                    <rect key="frame" x="178" y="15" width="60" height="21"/>
+                                                    <rect key="frame" x="125" y="26" width="60" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="rEJ-7J-yd6"/>
                                                     </constraints>
@@ -38,13 +38,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="bcK-30-38D">
-                                                    <rect key="frame" x="21" y="15" width="129" height="71"/>
+                                                    <rect key="frame" x="21" y="16" width="80" height="80"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="129" id="sqb-iH-huJ"/>
+                                                        <constraint firstAttribute="width" constant="80" id="sqb-iH-huJ"/>
+                                                        <constraint firstAttribute="height" constant="80" id="wzf-lc-TFB"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCm-1R-q95">
-                                                    <rect key="frame" x="178" y="56" width="42" height="21"/>
+                                                    <rect key="frame" x="125" y="66" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -52,15 +53,21 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.26455530939999999" green="1" blue="0.15133627190000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gCm-1R-q95" secondAttribute="bottom" constant="18.5" id="CHc-QC-oyD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gCm-1R-q95" secondAttribute="bottom" constant="22" id="CHc-QC-oyD"/>
                                                 <constraint firstItem="bcK-30-38D" firstAttribute="top" secondItem="o8A-wH-u9s" secondAttribute="topMargin" constant="7" id="KV0-45-hjF"/>
                                                 <constraint firstItem="gCm-1R-q95" firstAttribute="leading" secondItem="FvF-T9-pV8" secondAttribute="leading" id="MIo-fK-3BN"/>
-                                                <constraint firstItem="FvF-T9-pV8" firstAttribute="leading" secondItem="bcK-30-38D" secondAttribute="trailing" constant="28" id="W7Q-Se-l0g"/>
-                                                <constraint firstItem="gCm-1R-q95" firstAttribute="top" secondItem="FvF-T9-pV8" secondAttribute="bottom" constant="20" id="YmH-N0-sTq"/>
+                                                <constraint firstItem="FvF-T9-pV8" firstAttribute="leading" secondItem="bcK-30-38D" secondAttribute="trailing" constant="24" id="W7Q-Se-l0g"/>
+                                                <constraint firstItem="gCm-1R-q95" firstAttribute="top" secondItem="FvF-T9-pV8" secondAttribute="bottom" constant="19" id="YmH-N0-sTq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bcK-30-38D" secondAttribute="bottom" constant="9.5" id="a8m-Xh-J9r"/>
                                                 <constraint firstItem="bcK-30-38D" firstAttribute="leading" secondItem="o8A-wH-u9s" secondAttribute="leadingMargin" constant="13" id="iEn-iq-bUb"/>
-                                                <constraint firstItem="FvF-T9-pV8" firstAttribute="top" secondItem="bcK-30-38D" secondAttribute="top" id="iYO-LS-c7R"/>
+                                                <constraint firstItem="FvF-T9-pV8" firstAttribute="top" secondItem="bcK-30-38D" secondAttribute="top" constant="10" id="iYO-LS-c7R"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="KV0-45-hjF"/>
+                                                    <exclude reference="a8m-Xh-J9r"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="GPA" destination="gCm-1R-q95" id="ZzN-VH-9EX"/>
@@ -87,7 +94,7 @@
                             <constraint firstItem="48G-5v-b0h" firstAttribute="top" secondItem="kov-Wd-rMA" secondAttribute="top" id="MbN-hr-0YN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TwI-FT-ujc">
+                    <navigationItem key="navigationItem" title="Student List" id="TwI-FT-ujc">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="b9g-Wm-F9C">
                             <connections>
                                 <segue destination="nMq-Ib-csh" kind="show" id="veW-5i-maz"/>
@@ -102,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="765" y="309"/>
         </scene>
-        <!--Form Student-->
+        <!--Student Form-->
         <scene sceneID="nRu-eI-jhq">
             <objects>
                 <viewController id="nMq-Ib-csh" customClass="FormViewController" sceneMemberID="viewController">
@@ -136,7 +143,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Form Student" id="F69-fE-NGE">
+                    <navigationItem key="navigationItem" title="Student Form" id="F69-fE-NGE">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="E6y-V6-5d3">
                             <connections>
                                 <action selector="SaveStudent:" destination="nMq-Ib-csh" id="Iop-gn-OWU"/>
@@ -173,6 +180,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="300" height="300"/>
+        <image name="avatar" width="256" height="256"/>
     </resources>
 </document>
