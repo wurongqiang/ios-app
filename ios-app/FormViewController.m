@@ -38,9 +38,10 @@
     student.name = self.name.text;
     student.gpa = @([self.gpa.text doubleValue]);
     
+    __weak __typeof(self) weakSelf = self;
     [StudentService createStudent:student withCompletion:^(NSError *error) {
         if (!error) {
-            [self.navigationController popViewControllerAnimated:TRUE];
+            [weakSelf.navigationController popViewControllerAnimated:TRUE];
         }
     }];
 }
@@ -51,12 +52,12 @@
     student.name = self.name.text;
     student.gpa = @([self.gpa.text doubleValue]);
     
+    __weak __typeof(self) weakSelf = self;
     [StudentService updateStudent:student withCompletion:^(NSError *error) {
         if (!error) {
-            [self.navigationController popViewControllerAnimated:TRUE];
+            [weakSelf.navigationController popViewControllerAnimated:TRUE];
         }
     }];
 }
-
 
 @end

@@ -88,9 +88,11 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         Student *student = [self.students objectAtIndex:indexPath.row];
+        
+        __weak __typeof(self) weakSelf = self;
         [StudentService deleteStudent:student.ID withCompletion:^(NSError *error) {
             if (!error) {
-                [self loadStudents];
+                [weakSelf loadStudents];
             }
         }];
     }
