@@ -11,8 +11,9 @@
 
 @interface StudentService : NSObject
 
-+ (NSURLSessionDataTask *)getAllStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion;
-+ (NSURLSessionDataTask *)saveStudent:(Student *)student withCompletion:(void (^)(NSError *))completion;
++ (NSURLSessionDataTask *)getStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion;
++ (NSURLSessionDataTask *)createStudent:(Student *)student withCompletion:(void (^)(NSError *))completion;
 + (NSURLSessionDataTask *)deleteStudent:(NSNumber *)ID withCompletion:(void (^)(NSError *))completion;
++ (NSURLSessionDataTask *)updateStudent:(Student *)student withCompletion:(void (^)(NSError *))completion;
 
 @end

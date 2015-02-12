@@ -10,7 +10,7 @@
 
 @implementation StudentService
 
-+ (NSURLSessionDataTask *)getAllStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion
++ (NSURLSessionDataTask *)getStudentsWithCompletion:(void (^)(NSArray *, NSError *))completion
 {
     return [[APIClient sharedClient] GET:@"students.json" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
@@ -34,7 +34,7 @@
     
 }
 
-+ (NSURLSessionDataTask *)saveStudent:(Student *)student withCompletion:(void (^)(NSError *))completion
++ (NSURLSessionDataTask *)createStudent:(Student *)student withCompletion:(void (^)(NSError *))completion
 {
     NSDictionary *params = @{@"student":
                                     @{
@@ -61,6 +61,29 @@
     NSString *url = [NSString stringWithFormat:@"students/%@.json",ID];
     return [[APIClient sharedClient] DELETE:url
                                parameters:nil
+                                  success:^(NSURLSessionDataTask *task, id responseObject) {
+                                      if (completion) {
+                                          completion(nil);
+                                      }
+                                  } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                      if (completion) {
+                                          completion(error);
+                                      }
+                                  }];
+}
+
++ (NSURLSessionDataTask *)updateStudent:(Student *)student withCompletion:(void (^)(NSError *))completion
+{
+    NSDictionary *params = @{@"student":
+                                 @{
+                                     @"name":student.name,
+                                     @"gpa":student.gpa
+                                     }
+                             };
+    
+    NSString *url = [NSString stringWithFormat:@"students/%@.json",student.ID];
+    return [[APIClient sharedClient] PUT:url
+                               parameters:params
                                   success:^(NSURLSessionDataTask *task, id responseObject) {
                                       if (completion) {
                                           completion(nil);

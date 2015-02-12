@@ -10,6 +10,7 @@
 #import "Student.h"
 #import "StudentService.h"
 #import "StudentCell.h"
+#import "FormViewController.h"
 
 @implementation ViewController
 
@@ -38,7 +39,7 @@
 
 - (void)loadStudents {
     __weak __typeof(self) weakSelf = self;
-    [StudentService getAllStudentsWithCompletion:^(NSArray *students, NSError *error) {
+    [StudentService getStudentsWithCompletion:^(NSArray *students, NSError *error) {
         weakSelf.students = [[NSMutableArray alloc]initWithArray:students];
         [weakSelf.tableView reloadData];
     }];
@@ -92,6 +93,21 @@
                 [self loadStudents];
             }
         }];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ToStudentForm"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[FormViewController class]]) {
+            Student *student = [self.students objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+            
+            FormViewController *vc = (FormViewController *)[segue destinationViewController];
+            vc.currentID = student.ID;
+            vc.currentName = student.name;
+            vc.currentGPA = student.gpa;
+        }
     }
 }
 

@@ -14,4 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *gpa;
 
 
+@property (strong, nonatomic) NSNumber *currentID;
+@property (strong, nonatomic) NSString *currentName;
+@property (strong, nonatomic) NSNumber *currentGPA;
+
+
 @end

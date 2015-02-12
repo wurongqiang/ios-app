@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--List Student-->
+        <!--Student List-->
         <scene sceneID="dT0-X7-tVG">
             <objects>
-                <viewController id="Cne-dw-kBZ" userLabel="List Student" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="Cne-dw-kBZ" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KGo-7I-FTS"/>
                         <viewControllerLayoutGuide type="bottom" id="Nie-Jj-M06"/>
@@ -95,9 +95,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Student List" id="TwI-FT-ujc">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="A8O-a2-BaU">
+                            <connections>
+                                <segue destination="nMq-Ib-csh" kind="show" identifier="ToStudentForm" id="8Dp-HM-YsB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="b9g-Wm-F9C">
                             <connections>
-                                <segue destination="nMq-Ib-csh" kind="show" id="veW-5i-maz"/>
+                                <segue destination="nMq-Ib-csh" kind="show" identifier="" id="veW-5i-maz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -182,4 +187,7 @@
     <resources>
         <image name="avatar" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8Dp-HM-YsB"/>
+    </inferredMetricsTieBreakers>
 </document>
