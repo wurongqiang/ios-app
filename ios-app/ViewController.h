@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FormViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, FormViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *students;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

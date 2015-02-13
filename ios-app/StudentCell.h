@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *GPA;
+@property (weak, nonatomic) IBOutlet UILabel *gpa;
 
 @end

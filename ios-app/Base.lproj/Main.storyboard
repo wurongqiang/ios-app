@@ -70,8 +70,8 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="GPA" destination="gCm-1R-q95" id="ZzN-VH-9EX"/>
                                             <outlet property="avatar" destination="bcK-30-38D" id="fpO-Ct-yQQ"/>
+                                            <outlet property="gpa" destination="gCm-1R-q95" id="oiE-WR-2NR"/>
                                             <outlet property="name" destination="FvF-T9-pV8" id="xx5-zi-dSW"/>
                                         </connections>
                                     </tableViewCell>
@@ -151,7 +151,7 @@
                     <navigationItem key="navigationItem" title="Student Form" id="F69-fE-NGE">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="E6y-V6-5d3">
                             <connections>
-                                <action selector="SaveStudent:" destination="nMq-Ib-csh" id="Iop-gn-OWU"/>
+                                <action selector="saveStudent:" destination="nMq-Ib-csh" id="qcB-bw-Kmr"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,6 +188,6 @@
         <image name="avatar" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Dp-HM-YsB"/>
+        <segue reference="veW-5i-maz"/>
     </inferredMetricsTieBreakers>
 </document>

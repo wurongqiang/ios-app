@@ -22,17 +22,17 @@
     }
 }
 
-//- (IBAction)SaveStudent:(id)sender {
-//    [self createStudent];
-//}
-
-- (IBAction)SaveStudent:(id)sender {
+- (IBAction)saveStudent:(id)sender {
     if (self.currentID) {
         [self updateStudent];
     } else {
         [self createStudent];
     }
 }
+
+//- (IBAction)saveStudent:(id)sender {
+//    [self createStudent];
+//}
 
 -(void)createStudent {
     Student *student = [[Student alloc]init];
@@ -55,10 +55,11 @@
     student.name = self.name.text;
     student.gpa = @([self.gpa.text doubleValue]);
     
-    __weak __typeof(self) weakSelf = self;
+     __weak __typeof(self) weakSelf = self;
     [SVProgressHUD show];
     [StudentService updateStudent:student withCompletion:^(NSError *error) {
         if (!error) {
+            [self.delegate studentEdited];
             [SVProgressHUD dismiss];
             [weakSelf.navigationController popViewControllerAnimated:TRUE];
         }

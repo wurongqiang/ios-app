@@ -65,7 +65,7 @@
     
     Student *student = [self.students objectAtIndex:indexPath.row];
     cell.name.text = student.name;
-    cell.GPA.text = [NSString stringWithFormat:@"%@", student.gpa];
+    cell.gpa.text = [NSString stringWithFormat:@"%@", student.gpa];
     return cell;
 }
 
@@ -110,11 +110,16 @@
             Student *student = [self.students objectAtIndex:[self.tableView indexPathForSelectedRow].row];
             
             FormViewController *vc = (FormViewController *)[segue destinationViewController];
+            vc.delegate = self;
             vc.currentID = student.ID;
             vc.currentName = student.name;
             vc.currentGPA = student.gpa;
         }
     }
+}
+
+- (void)studentEdited {
+    NSLog(@"a Student is edited");
 }
 
 @end

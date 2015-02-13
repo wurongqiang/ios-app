@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Student.h"
+
+@protocol FormViewDelegate
+
+- (void)studentEdited;
+
+@end
 
 @interface FormViewController : UIViewController
+
+@property (weak) id <FormViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *gpa;
