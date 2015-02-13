@@ -11,6 +11,7 @@
 #import "StudentService.h"
 #import "StudentCell.h"
 #import "FormViewController.h"
+#import "SVProgressHUD.h"
 
 @implementation ViewController
 
@@ -39,9 +40,12 @@
 
 - (void)loadStudents {
     __weak __typeof(self) weakSelf = self;
+    [SVProgressHUD show];
     [StudentService getStudentsWithCompletion:^(NSArray *students, NSError *error) {
         weakSelf.students = [[NSMutableArray alloc]initWithArray:students];
         [weakSelf.tableView reloadData];
+        [SVProgressHUD dismiss];
+
     }];
 }
 

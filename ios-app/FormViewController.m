@@ -9,6 +9,7 @@
 #import "FormViewController.h"
 #import "StudentService.h"
 #import "Student.h"
+#import "SVProgressHUD.h"
 
 @implementation FormViewController
 
@@ -39,8 +40,10 @@
     student.gpa = @([self.gpa.text doubleValue]);
     
     __weak __typeof(self) weakSelf = self;
+    [SVProgressHUD show];
     [StudentService createStudent:student withCompletion:^(NSError *error) {
         if (!error) {
+            [SVProgressHUD dismiss];
             [weakSelf.navigationController popViewControllerAnimated:TRUE];
         }
     }];
@@ -53,8 +56,10 @@
     student.gpa = @([self.gpa.text doubleValue]);
     
     __weak __typeof(self) weakSelf = self;
+    [SVProgressHUD show];
     [StudentService updateStudent:student withCompletion:^(NSError *error) {
         if (!error) {
+            [SVProgressHUD dismiss];
             [weakSelf.navigationController popViewControllerAnimated:TRUE];
         }
     }];
